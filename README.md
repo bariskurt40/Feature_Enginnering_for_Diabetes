@@ -1,106 +1,101 @@
-# Diabetes Prediction Model
+FEATURE_ENGINEERING_FOR_DIABETES
+Transforming Data into Life-Saving Insights
 
-This repository contains a Python script for building and evaluating machine learning models to predict the onset of diabetes based on diagnostic measures. The project involves comprehensive data preprocessing, feature engineering, and a comparative analysis of various classification algorithms.
+<p align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/last%2520commit-July%25202025-blue" alt="Last Commit">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/python-100.0%2525-blue" alt="Python">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/languages-1-blue" alt="Languages">
+</p>
 
-## Table of Contents
-- [Project Description](#project-description)
-- [Dataset](#dataset)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Model Evaluation](#model-evaluation)
-- [Model Limitations and Potential Biases](#model-limitations-and-potential-biases)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+<p align="center">
+Built with the tools and technologies:
+</p>
 
----
+<p align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Markdown-000000%3Fstyle%3Dfor-the-badge%26logo%3Dmarkdown%26logoColor%3Dwhite" alt="Markdown">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3776AB%3Fstyle%3Dfor-the-badge%26logo%3Dpython%26logoColor%3Dwhite" alt="Python">
+</p>
 
-## Project Description
+Table of Contents
+Overview
 
-The primary goal of this project is to predict whether a patient has diabetes based on certain diagnostic medical predictor variables. The provided Python script, `Diabetes.py`, performs the following key steps:
+Getting Started
 
-1.  **Exploratory Data Analysis (EDA)**: The script begins by exploring the dataset to understand its structure, identify missing values, and analyze the distribution of different features.
-2.  **Data Preprocessing**: It handles missing data by replacing zero values in specific columns with the mean of that feature, grouped by the outcome variable. It also addresses outliers by replacing them with calculated threshold values.
-3.  **Feature Engineering**: New features are created to potentially improve model performance. This includes creating categorical age and BMI groups, as well as interaction features between different variables.
-4.  **Model Training and Comparison**: The script trains and evaluates several machine learning models to find the best-performing one for this prediction task. The models used are:
-    * Random Forest
-    * LightGBM
-    * Decision Tree
-    * Logistic Regression
-    * XGBoost
-    * K-Nearest Neighbors (KNN)
-5.  **Feature Importance**: The script also visualizes the importance of different features in the prediction, providing insights into which factors are most influential.
+Prerequisites
 
----
+Installation
 
-## Dataset
+Project Workflow
 
-This project utilizes the **Pima Indians Diabetes Database**.
+Usage
 
-* **Source**: The dataset originates from the National Institute of Diabetes and Digestive and Kidney Diseases. It is a well-known dataset in the machine learning community and is available from platforms like Kaggle.
+Testing
 
-### Features
+Overview
+Feature_Engineering_for_Diabetes is a comprehensive developer tool that simplifies the process of preparing clinical data for diabetes prediction models. It enables efficient data exploration, visualization, and preprocessing, ensuring your datasets are clean and model-ready.
 
-The dataset includes the following features:
+Why Feature_Engineering_for_Diabetes?
+This project aims to facilitate accurate health risk assessments through robust data handling. The core features include:
 
-* **Pregnancies**: Number of times pregnant
-* **Glucose**: Plasma glucose concentration a 2 hours in an oral glucose tolerance test
-* **BloodPressure**: Diastolic blood pressure (mm Hg)
-* **SkinThickness**: Triceps skin fold thickness (mm)
-* **Insulin**: 2-Hour serum insulin (mu U/ml)
-* **BMI**: Body mass index (weight in kg/(height in m)^2)
-* **DiabetesPedigreeFunction**: A function that scores the likelihood of diabetes based on family history.
-* **Age**: Age in years
-* **Outcome**: The target variable, indicating whether the patient has diabetes (1) or not (0).
+📝 Data Exploration: Visualize and understand data distributions to identify patterns and anomalies.
 
-### Data Format Example
+🧪 Missing Value Handling: Detect and address gaps in clinical datasets to improve model reliability.
 
-Here's a sample of what the data looks like in the `.csv` file: Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age,Outcome
-6,148,72,35,0,33.6,0.627,50,1
-1,85,66,29,0,26.6,0.351,31,0
-8,183,64,0,0,23.3,0.672,32,1
+⚙️ Feature Engineering & Scaling: Create impactful new features from existing data and normalize them for optimal model performance.
 
+📊 Model Comparison: Train and evaluate multiple machine learning algorithms (including Random Forest, LGBM, and XGBoost) to identify the best-performing model.
 
----
+Getting Started
+Prerequisites
+This project requires the following dependencies:
 
-## Setup and Installation
+Programming Language: Python
 
-To run this project, you'll need Python 3 and several libraries.
+Package Manager: Conda
 
-### Prerequisites
+Installation
+Build Feature_Enginnering_for_Diabetes from the source and install dependencies:
 
-* Python 3.6 or higher. You can download it from [python.org](https://www.python.org/downloads/).
+Clone the repository:
 
-### Dependencies
+> git clone [https://github.com/bariskurt40/Feature_Enginnering_for_Diabetes](https://github.com/bariskurt40/Feature_Enginnering_for_Diabetes)
 
-You can install all the necessary libraries using `pip`. It is recommended to use a virtual environment.
+Navigate to the project directory:
 
-1.  Create a file named `requirements.txt` and paste the following content into it:
+> cd Feature_Enginnering_for_Diabetes
 
-    ```
-    numpy
-    pandas
-    seaborn
-    matplotlib
-    missingno
-    scikit-learn
-    lightgbm
-    xgboost
-    ```
+Install the dependencies:
+(Note: You will need to create a conda.yml file with the project's dependencies for this command to work.)
 
-2.  Install the dependencies by running the following command in your terminal:
+Using conda:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+> conda env create -f conda.yml
 
----
+Project Workflow
+The script Diabetes.py follows a systematic pipeline to process the data and build predictive models:
 
-## Usage
+Data Preprocessing: Handles missing values (where 0 indicates missing data in columns like Glucose and BMI), caps outliers using quantile-based thresholds, and scales numerical features using RobustScaler.
 
-To run the diabetes prediction script, navigate to the project's root directory in your terminal and execute the `Diabetes.py` script.
+Feature Engineering: The core of the project involves creating new, insightful features. This includes binning Age, Glucose, and BMI into categorical variables and creating interaction features like GLUCOSE_INSULIN and INSULIN_BMI to capture complex relationships.
 
-### Running the Script
+Model Training & Evaluation: Trains several classification models (Random Forest, LGBM, XGBoost, Logistic Regression, KNN, Decision Tree) and compares their performance using metrics like Accuracy, Precision, Recall, and F1-Score to find the most effective model.
 
-```bash
-python Feature_Enginnering_for_Diabetes-main/Diabetes.py
+Usage
+Run the project with:
+
+Using conda:
+
+conda activate diabetes_env
+python Diabetes.py
+
+Testing
+This project can use the pytest test framework. To run a test suite:
+
+Using conda:
+
+conda activate diabetes_env
+pytest
+
+<br>
+
+<p align="right"><a href="#top">⬆️ Return</a></p>
